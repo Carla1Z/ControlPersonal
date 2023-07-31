@@ -19,8 +19,11 @@ namespace ControlPersonal.Vistas
             InitializeComponent();
         }
 
+        int Idcargo;
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            LocalizarDgvCargos();
             PanelCargos.Visible = false;
             PanelPaginado.Visible = false;
             PanelRegistros.Visible = true;
@@ -28,6 +31,15 @@ namespace ControlPersonal.Vistas
             btnGuardarPersonal.Visible = true;
             btnGuardarCambiosPersonal.Visible = false;
             Limpiar();
+        }
+
+        private void LocalizarDgvCargos()
+        {
+            dataListadoCargos.Location = new Point(txtSueldoHora.Location.X, txtSueldoHora.Location.Y);
+            dataListadoCargos.Size = new Size(469, 141);
+            dataListadoCargos.Visible = true;
+            lblSueldo.Visible = false;
+            PanelBtnGuardarPer.Visible = false;
         }
 
         private void Limpiar()
@@ -90,6 +102,9 @@ namespace ControlPersonal.Vistas
             funcion.BuscarCargos(ref dt, txtCargo.Text);
             dataListadoCargos.DataSource = dt;
             Bases.DiseñoDGV(ref dataListadoCargos);
+            dataListadoCargos.Columns[1].Visible = false;
+            dataListadoCargos.Columns[3].Visible = false;
+            dataListadoCargos.Visible = true;
         }
 
         private void txtCargo_TextChanged(object sender, EventArgs e)
@@ -121,6 +136,72 @@ namespace ControlPersonal.Vistas
         private void txtSueldoHora_KeyPress(object sender, KeyPressEventArgs e)
         {
             Bases.Decimales(txtSueldoHora, e);
+        }
+
+        private void dataListadoCargos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataListadoCargos.Columns["EditarC"].Index)
+            {
+                ObtenerCargosEditar();
+            }
+            if (e.ColumnIndex == dataListadoCargos.Columns["Cargo"].Index)
+            {
+                ObtenerDatosCargos();
+            }
+        }
+
+        private void ObtenerDatosCargos()
+        {
+            Idcargo = Convert.ToInt32(dataListadoCargos.SelectedCells[1].Value);
+            txtCargo.Text = dataListadoCargos.SelectedCells[2].Value.ToString();
+            txtSueldoHora.Text = dataListadoCargos.SelectedCells[3].Value.ToString();
+            dataListadoCargos.Visible = false;
+            PanelBtnGuardarPer.Visible = true;
+            lblSueldo.Visible = true;
+        }
+
+        private void ObtenerCargosEditar()
+        {
+            Idcargo = Convert.ToInt32(dataListadoCargos.SelectedCells[1].Value);
+            txtCargoG.Text = dataListadoCargos.SelectedCells[2].Value.ToString();
+            txtSueldoG.Text = dataListadoCargos.SelectedCells[3].Value.ToString();
+            btnGuardarC.Visible = false;
+            btnGuardarCambiosC.Visible = true;
+            txtCargoG.Focus();
+            txtCargo.SelectAll();
+            PanelCargos.Visible = true;
+            PanelCargos.Dock = DockStyle.Fill;
+            PanelCargos.BringToFront();
+        }
+
+        private void btnVolverCargos_Click(object sender, EventArgs e)
+        {
+            PanelCargos.Visible=false;
+        }
+
+        private void btnVolverPersonal_Click(object sender, EventArgs e)
+        {
+            PanelRegistros.Visible=false;
+        }
+
+        private void btnGuardarCambiosC_Click(object sender, EventArgs e)
+        {
+            EditarCargos();
+        }
+
+        private void EditarCargos()
+        {
+            CargosServices parametros = new CargosServices();
+            CargosData funcion = new CargosData();
+            parametros.Id_cargo = Idcargo;
+            parametros.Cargo = txtCargoG.Text;
+            parametros.SueldoPorHora = Convert.ToDouble(txtSueldoG.Text);
+            if (funcion.EditarCargo(parametros) == true)
+            {
+                txtCargo.Clear();
+                Buscar_Cargos();
+                PanelCargos.Visible = false;
+            }
         }
     }
 }
