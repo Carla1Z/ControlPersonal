@@ -46,7 +46,18 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.PanelRegistros = new System.Windows.Forms.Panel();
+            this.dataListadoCargos = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             this.PanelCargos = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnGuardarC = new System.Windows.Forms.Button();
+            this.btnGuardarCambiosC = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtSueldoG = new System.Windows.Forms.TextBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.txtCargoG = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnGuardarPersonal = new System.Windows.Forms.Button();
             this.btnGuardarCambiosPersonal = new System.Windows.Forms.Button();
@@ -65,25 +76,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelRegistros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoCargos)).BeginInit();
             this.PanelCargos.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -305,6 +307,7 @@
             // 
             // PanelRegistros
             // 
+            this.PanelRegistros.Controls.Add(this.dataListadoCargos);
             this.PanelRegistros.Controls.Add(this.button5);
             this.PanelRegistros.Controls.Add(this.PanelCargos);
             this.PanelRegistros.Controls.Add(this.flowLayoutPanel1);
@@ -331,19 +334,146 @@
             this.PanelRegistros.TabIndex = 4;
             this.PanelRegistros.Visible = false;
             // 
+            // dataListadoCargos
+            // 
+            this.dataListadoCargos.AllowUserToAddRows = false;
+            this.dataListadoCargos.AllowUserToDeleteRows = false;
+            this.dataListadoCargos.AllowUserToOrderColumns = true;
+            this.dataListadoCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoCargos.Location = new System.Drawing.Point(540, 330);
+            this.dataListadoCargos.Name = "dataListadoCargos";
+            this.dataListadoCargos.RowHeadersWidth = 51;
+            this.dataListadoCargos.RowTemplate.Height = 24;
+            this.dataListadoCargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataListadoCargos.Size = new System.Drawing.Size(330, 127);
+            this.dataListadoCargos.TabIndex = 19;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::ControlPersonal.Properties.Resources.girar_a_la_izquierda;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(691, 28);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(52, 34);
+            this.button5.TabIndex = 18;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // PanelCargos
             // 
             this.PanelCargos.Controls.Add(this.panel12);
             this.PanelCargos.Controls.Add(this.panel10);
-            this.PanelCargos.Controls.Add(this.textBox4);
+            this.PanelCargos.Controls.Add(this.txtSueldoG);
             this.PanelCargos.Controls.Add(this.panel11);
-            this.PanelCargos.Controls.Add(this.textBox7);
+            this.PanelCargos.Controls.Add(this.txtCargoG);
             this.PanelCargos.Controls.Add(this.label10);
             this.PanelCargos.Controls.Add(this.label11);
             this.PanelCargos.Location = new System.Drawing.Point(870, 75);
             this.PanelCargos.Name = "PanelCargos";
             this.PanelCargos.Size = new System.Drawing.Size(447, 221);
             this.PanelCargos.TabIndex = 18;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.btnGuardarC);
+            this.panel12.Controls.Add(this.btnGuardarCambiosC);
+            this.panel12.Location = new System.Drawing.Point(42, 128);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(362, 82);
+            this.panel12.TabIndex = 21;
+            // 
+            // btnGuardarC
+            // 
+            this.btnGuardarC.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardarC.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
+            this.btnGuardarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarC.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarC.Location = new System.Drawing.Point(39, 21);
+            this.btnGuardarC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardarC.Name = "btnGuardarC";
+            this.btnGuardarC.Size = new System.Drawing.Size(139, 40);
+            this.btnGuardarC.TabIndex = 2;
+            this.btnGuardarC.Text = "Guardar";
+            this.btnGuardarC.UseVisualStyleBackColor = false;
+            this.btnGuardarC.Click += new System.EventHandler(this.btnGuardarC_Click);
+            // 
+            // btnGuardarCambiosC
+            // 
+            this.btnGuardarCambiosC.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnGuardarCambiosC.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
+            this.btnGuardarCambiosC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCambiosC.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambiosC.Location = new System.Drawing.Point(184, 21);
+            this.btnGuardarCambiosC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardarCambiosC.Name = "btnGuardarCambiosC";
+            this.btnGuardarCambiosC.Size = new System.Drawing.Size(139, 40);
+            this.btnGuardarCambiosC.TabIndex = 3;
+            this.btnGuardarCambiosC.Text = "Guardar*";
+            this.btnGuardarCambiosC.UseVisualStyleBackColor = false;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DeepPink;
+            this.panel10.Location = new System.Drawing.Point(201, 95);
+            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(225, 1);
+            this.panel10.TabIndex = 20;
+            // 
+            // txtSueldoG
+            // 
+            this.txtSueldoG.BackColor = System.Drawing.Color.MistyRose;
+            this.txtSueldoG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSueldoG.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSueldoG.Location = new System.Drawing.Point(201, 74);
+            this.txtSueldoG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSueldoG.Name = "txtSueldoG";
+            this.txtSueldoG.Size = new System.Drawing.Size(225, 24);
+            this.txtSueldoG.TabIndex = 19;
+            this.txtSueldoG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoG_KeyPress);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DeepPink;
+            this.panel11.Location = new System.Drawing.Point(201, 43);
+            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(225, 1);
+            this.panel11.TabIndex = 18;
+            // 
+            // txtCargoG
+            // 
+            this.txtCargoG.BackColor = System.Drawing.Color.MistyRose;
+            this.txtCargoG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCargoG.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargoG.Location = new System.Drawing.Point(201, 22);
+            this.txtCargoG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCargoG.Name = "txtCargoG";
+            this.txtCargoG.Size = new System.Drawing.Size(225, 24);
+            this.txtCargoG.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(103, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 24);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "Cargo:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 24);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Sueldo por hora:";
             // 
             // flowLayoutPanel1
             // 
@@ -352,7 +482,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(128, 391);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(564, 67);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(311, 67);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // btnGuardarPersonal
@@ -368,6 +498,7 @@
             this.btnGuardarPersonal.TabIndex = 0;
             this.btnGuardarPersonal.Text = "Guardar";
             this.btnGuardarPersonal.UseVisualStyleBackColor = false;
+            this.btnGuardarPersonal.Click += new System.EventHandler(this.btnGuardarPersonal_Click);
             // 
             // btnGuardarCambiosPersonal
             // 
@@ -396,6 +527,7 @@
             this.btnAgregarCargo.TabIndex = 16;
             this.btnAgregarCargo.Text = "+ Agregar cargo";
             this.btnAgregarCargo.UseVisualStyleBackColor = true;
+            this.btnAgregarCargo.Click += new System.EventHandler(this.btnAgregarCargo_Click);
             // 
             // cbxPais
             // 
@@ -445,6 +577,7 @@
             this.txtSueldoHora.Name = "txtSueldoHora";
             this.txtSueldoHora.Size = new System.Drawing.Size(146, 24);
             this.txtSueldoHora.TabIndex = 13;
+            this.txtSueldoHora.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSueldoHora_KeyPress);
             // 
             // panel8
             // 
@@ -465,6 +598,7 @@
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(225, 24);
             this.txtCargo.TabIndex = 11;
+            this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
             // 
             // panel6
             // 
@@ -551,117 +685,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombres y apellidos:";
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::ControlPersonal.Properties.Resources.girar_a_la_izquierda;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(691, 28);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 34);
-            this.button5.TabIndex = 18;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.DeepPink;
-            this.panel11.Location = new System.Drawing.Point(201, 43);
-            this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(225, 1);
-            this.panel11.TabIndex = 18;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(201, 22);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(225, 24);
-            this.textBox7.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(103, 22);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 24);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "Cargo:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 69);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 24);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Sueldo por hora:";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.DeepPink;
-            this.panel10.Location = new System.Drawing.Point(201, 95);
-            this.panel10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(225, 1);
-            this.panel10.TabIndex = 20;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.MistyRose;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(201, 74);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 24);
-            this.textBox4.TabIndex = 19;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.button1);
-            this.panel12.Controls.Add(this.button11);
-            this.panel12.Location = new System.Drawing.Point(42, 128);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(362, 82);
-            this.panel12.TabIndex = 21;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(39, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(184, 21);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(139, 40);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Guardar*";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -683,10 +706,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelRegistros.ResumeLayout(false);
             this.PanelRegistros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataListadoCargos)).EndInit();
             this.PanelCargos.ResumeLayout(false);
             this.PanelCargos.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -731,13 +755,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel PanelCargos;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnGuardarC;
+        private System.Windows.Forms.Button btnGuardarCambiosC;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSueldoG;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCargoG;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dataListadoCargos;
     }
 }

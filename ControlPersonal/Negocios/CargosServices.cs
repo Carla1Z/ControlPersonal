@@ -10,6 +10,6 @@ namespace ControlPersonal.Negocios
     {
         public int Id_cargo { get; set; }
         public string Cargo { get; set; }
-        public string SueldoPorHora { get; set; }
+        public double SueldoPorHora { get; set; }
     }
 }

@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\CargosData.cs" />
     <Compile Include="Datos\CONEXIONMAESTRA.cs" />
     <Compile Include="Datos\PersonalData.cs" />
+    <Compile Include="Negocios\Bases.cs" />
+    <Compile Include="Negocios\CargosServices.cs" />
     <Compile Include="Negocios\PersonalServices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
