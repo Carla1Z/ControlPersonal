@@ -72,7 +72,7 @@ namespace ControlPersonal.Datos
                 CONEXIONMAESTRA.abrir();
                 SqlCommand cmd = new SqlCommand("eliminarPersonal", CONEXIONMAESTRA.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id_personal", parametros.Id_personal);
+                cmd.Parameters.AddWithValue("@Idpersonal", parametros.Id_personal);
                 cmd.ExecuteNonQuery();
                 return true;
             }
