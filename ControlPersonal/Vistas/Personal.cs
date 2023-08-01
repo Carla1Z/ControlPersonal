@@ -92,6 +92,7 @@ namespace ControlPersonal.Vistas
             parametros.SueldoPorHora = Convert.ToDouble(txtSueldoHora.Text);
             if (funcion.InsertarPersonal(parametros) == true)
             {
+                ReiniciarPaginado();
                 MostrarPersonal();
                 PanelRegistros.Visible = false;
             }
@@ -255,7 +256,30 @@ namespace ControlPersonal.Vistas
 
         private void Personal_Load(object sender, EventArgs e)
         {
+            ReiniciarPaginado();
             MostrarPersonal();
+        }
+
+        private void ReiniciarPaginado()
+        {
+            desde = 1;
+            hasta = 10;
+            Contar();
+            if (contador > hasta)
+            {
+                btnSiguiente.Visible = true;
+                btnAnterior.Visible = false;
+                btnUltima.Visible = true;
+                btnPrimera.Visible = true;
+            }
+            else
+            {
+                btnSiguiente.Visible=false;
+                btnAnterior.Visible=false;
+                btnUltima.Visible=false;
+                btnPrimera.Visible=false;
+            }
+            Paginar();
         }
 
         private void dataListadoPersonal_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -361,6 +385,93 @@ namespace ControlPersonal.Vistas
                 MostrarPersonal();
                 PanelRegistros.Visible = false;
             }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            desde += 10;
+            hasta += 10;
+            MostrarPersonal();
+            Contar();
+            if (contador > hasta)
+            {
+                btnSiguiente.Visible = true;
+                btnAnterior.Visible = true;
+            }
+            else
+            {
+                btnSiguiente.Visible = false;
+                btnAnterior.Visible = true;
+            }
+            Paginar();
+        }
+
+        private void Paginar()
+        {
+            try
+            {
+                lblPagina.Text = (hasta / items_por_pagina).ToString();
+                lblTotalPaginas.Text = Math.Ceiling(Convert.ToSingle(contador) / items_por_pagina).ToString();
+                totalPaginas = Convert.ToInt32(lblTotalPaginas.Text);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void Contar()
+        {
+            PersonalData funcion = new PersonalData();
+            funcion.ContarPersonal(ref contador);
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            desde -= 10;
+            hasta -= 10;
+            MostrarPersonal();
+            Contar();
+            if(contador > hasta)
+            {
+                btnSiguiente.Visible=true;
+                btnAnterior.Visible = true;
+            }
+            else
+            {
+                btnSiguiente.Visible = false;
+                btnAnterior.Visible = true;
+            }
+            if (desde == 1)
+            {
+                ReiniciarPaginado();
+            }
+            Paginar();
+        }
+
+        private void btnUltima_Click(object sender, EventArgs e)
+        {
+            hasta = totalPaginas * items_por_pagina;
+            desde = hasta - (items_por_pagina - 1);
+            MostrarPersonal();
+            Contar();
+            if (contador > hasta)
+            {
+                btnSiguiente.Visible = true;
+                btnAnterior.Visible = true;
+            }
+            else
+            {
+                btnSiguiente.Visible = false;
+                btnAnterior.Visible = true;
+            }
+            Paginar();
+        }
+
+        private void btnPrimera_Click(object sender, EventArgs e)
+        {
+            ReiniciarPaginado();
+            MostrarPersonal();
         }
     }
 }

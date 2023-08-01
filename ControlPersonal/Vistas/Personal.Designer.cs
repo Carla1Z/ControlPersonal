@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataListadoPersonal = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalPaginas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPagina = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnPrimera = new System.Windows.Forms.Button();
+            this.btnUltima = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -113,14 +113,14 @@
             this.dataListadoPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar,
             this.Editar});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListadoPersonal.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListadoPersonal.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataListadoPersonal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoPersonal.Location = new System.Drawing.Point(0, 82);
             this.dataListadoPersonal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -161,14 +161,14 @@
             // PanelPaginado
             // 
             this.PanelPaginado.BackColor = System.Drawing.Color.Pink;
-            this.PanelPaginado.Controls.Add(this.label9);
+            this.PanelPaginado.Controls.Add(this.lblTotalPaginas);
             this.PanelPaginado.Controls.Add(this.label8);
-            this.PanelPaginado.Controls.Add(this.label7);
+            this.PanelPaginado.Controls.Add(this.lblPagina);
             this.PanelPaginado.Controls.Add(this.label6);
-            this.PanelPaginado.Controls.Add(this.button9);
-            this.PanelPaginado.Controls.Add(this.button10);
-            this.PanelPaginado.Controls.Add(this.button8);
-            this.PanelPaginado.Controls.Add(this.button7);
+            this.PanelPaginado.Controls.Add(this.btnPrimera);
+            this.PanelPaginado.Controls.Add(this.btnUltima);
+            this.PanelPaginado.Controls.Add(this.btnSiguiente);
+            this.PanelPaginado.Controls.Add(this.btnAnterior);
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelPaginado.Location = new System.Drawing.Point(0, 635);
             this.PanelPaginado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -176,102 +176,106 @@
             this.PanelPaginado.Size = new System.Drawing.Size(1389, 79);
             this.PanelPaginado.TabIndex = 2;
             // 
-            // label9
+            // lblTotalPaginas
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(502, 31);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(19, 20);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "0";
+            this.lblTotalPaginas.AutoSize = true;
+            this.lblTotalPaginas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPaginas.Location = new System.Drawing.Point(763, 29);
+            this.lblTotalPaginas.Name = "lblTotalPaginas";
+            this.lblTotalPaginas.Size = new System.Drawing.Size(19, 20);
+            this.lblTotalPaginas.TabIndex = 9;
+            this.lblTotalPaginas.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(465, 31);
+            this.label8.Location = new System.Drawing.Point(726, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(23, 16);
             this.label8.TabIndex = 8;
             this.label8.Text = "de";
             // 
-            // label7
+            // lblPagina
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(434, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "0";
+            this.lblPagina.AutoSize = true;
+            this.lblPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagina.Location = new System.Drawing.Point(695, 29);
+            this.lblPagina.Name = "lblPagina";
+            this.lblPagina.Size = new System.Drawing.Size(19, 20);
+            this.lblPagina.TabIndex = 7;
+            this.lblPagina.Text = "0";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(377, 31);
+            this.label6.Location = new System.Drawing.Point(638, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "Pagina";
             // 
-            // button9
+            // btnPrimera
             // 
-            this.button9.BackColor = System.Drawing.Color.Linen;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(712, 19);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(172, 40);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Primera Pagina";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnPrimera.BackColor = System.Drawing.Color.Linen;
+            this.btnPrimera.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPrimera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrimera.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrimera.Location = new System.Drawing.Point(1085, 19);
+            this.btnPrimera.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrimera.Name = "btnPrimera";
+            this.btnPrimera.Size = new System.Drawing.Size(220, 40);
+            this.btnPrimera.TabIndex = 5;
+            this.btnPrimera.Text = "Primera Pagina";
+            this.btnPrimera.UseVisualStyleBackColor = false;
+            this.btnPrimera.Click += new System.EventHandler(this.btnPrimera_Click);
             // 
-            // button10
+            // btnUltima
             // 
-            this.button10.BackColor = System.Drawing.Color.Linen;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(534, 19);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(172, 40);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Ultima Pagina";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnUltima.BackColor = System.Drawing.Color.Linen;
+            this.btnUltima.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnUltima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltima.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUltima.Location = new System.Drawing.Point(836, 19);
+            this.btnUltima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUltima.Name = "btnUltima";
+            this.btnUltima.Size = new System.Drawing.Size(220, 40);
+            this.btnUltima.TabIndex = 4;
+            this.btnUltima.Text = "Ultima Pagina";
+            this.btnUltima.UseVisualStyleBackColor = false;
+            this.btnUltima.Click += new System.EventHandler(this.btnUltima_Click);
             // 
-            // button8
+            // btnSiguiente
             // 
-            this.button8.BackColor = System.Drawing.Color.HotPink;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(197, 19);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(172, 40);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "Pagina siguiente";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnSiguiente.BackColor = System.Drawing.Color.HotPink;
+            this.btnSiguiente.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.Color.Black;
+            this.btnSiguiente.Location = new System.Drawing.Point(354, 19);
+            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(220, 40);
+            this.btnSiguiente.TabIndex = 3;
+            this.btnSiguiente.Text = "Pagina siguiente";
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // button7
+            // btnAnterior
             // 
-            this.button7.BackColor = System.Drawing.Color.HotPink;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(14, 19);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(172, 40);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Pagina anterior";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnAnterior.BackColor = System.Drawing.Color.HotPink;
+            this.btnAnterior.FlatAppearance.BorderColor = System.Drawing.Color.DarkMagenta;
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.Location = new System.Drawing.Point(84, 19);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(220, 40);
+            this.btnAnterior.TabIndex = 2;
+            this.btnAnterior.Text = "Pagina anterior";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // fileSystemWatcher1
             // 
@@ -388,37 +392,37 @@
             this.dataListadoCargos.AllowUserToDeleteRows = false;
             this.dataListadoCargos.AllowUserToOrderColumns = true;
             this.dataListadoCargos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListadoCargos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.RosyBrown;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListadoCargos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dataListadoCargos.ColumnHeadersHeight = 29;
             this.dataListadoCargos.ColumnHeadersVisible = false;
             this.dataListadoCargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarC});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListadoCargos.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListadoCargos.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataListadoCargos.Location = new System.Drawing.Point(652, 320);
             this.dataListadoCargos.Name = "dataListadoCargos";
             this.dataListadoCargos.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataListadoCargos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataListadoCargos.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dataListadoCargos.RowHeadersWidth = 51;
             this.dataListadoCargos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.MistyRose;
             this.dataListadoCargos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -891,14 +895,14 @@
         private System.Windows.Forms.Button btnGuardarPersonal;
         private System.Windows.Forms.Button btnVolverPersonal;
         private System.Windows.Forms.Button btnGuardarCambiosPersonal;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnPrimera;
+        private System.Windows.Forms.Button btnUltima;
+        private System.Windows.Forms.Label lblTotalPaginas;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPagina;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel PanelCargos;
         private System.Windows.Forms.Panel panel12;

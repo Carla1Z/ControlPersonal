@@ -109,7 +109,6 @@ namespace ControlPersonal.Datos
             }
         }
 
-
         public void MostrarPersonal(ref DataTable dt, int desde, int hasta)
         {
             try
@@ -153,7 +152,23 @@ namespace ControlPersonal.Datos
             }
         }
 
-
+        public void ContarPersonal(ref int Contador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("select Count(Id_personal) from Personal", CONEXIONMAESTRA.conectar);
+                Contador = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Contador = 0;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
 
     }
 }
