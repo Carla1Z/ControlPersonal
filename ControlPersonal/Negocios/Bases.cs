@@ -19,10 +19,27 @@ namespace ControlPersonal.Negocios
             Listado.CellBorderStyle = DataGridViewCellBorderStyle.None;
             Listado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             Listado.RowHeadersVisible = false;
+            Listado.RowTemplate.DefaultCellStyle.Font = new Font("Zilla Slab", 12, FontStyle.Regular | FontStyle.Italic);
             DataGridViewCellStyle cabecera = new DataGridViewCellStyle();
             cabecera.BackColor = Color.MistyRose;
-            cabecera.Font = new Font("Zilla Slab", 10, FontStyle.Bold);
+            cabecera.Font = new Font("Zilla Slab", 18, FontStyle.Bold);
             Listado.ColumnHeadersDefaultCellStyle = cabecera;
+        }
+
+        public static void DiseñoDGVEliminar(ref DataGridView Listado)
+        {
+            foreach (DataGridViewRow row in Listado.Rows)
+            {
+                string estado;
+                estado = row.Cells["Estado"].Value.ToString();
+                if (estado == "ELIMINADO")
+                {
+                    row.DefaultCellStyle.Font = new Font("Zilla Slab", 12, FontStyle.Regular | FontStyle.Italic);
+                    row.DefaultCellStyle.BackColor = Color.DarkGray;
+                    row.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
+                }
+            }
+
         }
 
         public static object Decimales(TextBox CajaTexto, KeyPressEventArgs e)

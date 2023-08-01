@@ -87,6 +87,29 @@ namespace ControlPersonal.Datos
             }
         }
 
+        public bool RestaurarPersonal(PersonalServices parametros)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("restaurar_personal", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Idpersonal", parametros.Id_personal);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+
         public void MostrarPersonal(ref DataTable dt, int desde, int hasta)
         {
             try

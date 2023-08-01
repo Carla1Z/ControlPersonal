@@ -109,6 +109,7 @@ namespace ControlPersonal.Vistas
         private void DiseñarDgvPersonal()
         {
             Bases.DiseñoDGV(ref dataListadoPersonal);
+            Bases.DiseñoDGVEliminar(ref dataListadoPersonal);
             PanelPaginado.Visible = true;
             dataListadoPersonal.Columns[2].Visible = false;
             dataListadoPersonal.Columns[7].Visible = false;
@@ -283,6 +284,7 @@ namespace ControlPersonal.Vistas
             }
             else
             {
+                LocalizarDgvCargos();
                 txtNombres.Text = dataListadoPersonal.SelectedCells[3].Value.ToString();
                 txtIdentificacion.Text = dataListadoPersonal.SelectedCells[4].Value.ToString();
                 cbxPais.Text = dataListadoPersonal.SelectedCells[10].Value.ToString();
@@ -303,7 +305,22 @@ namespace ControlPersonal.Vistas
 
         private void Restaurar_Personal()
         {
+            DialogResult result = MessageBox.Show("Este Personal se Elimino. ¿Desea volver a habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                HabilitarPersonal();
+            }
+        }
 
+        private void HabilitarPersonal()
+        {
+            PersonalServices parametros = new PersonalServices();
+            PersonalData funcion = new PersonalData();
+            parametros.Id_personal = Idpersonal;
+            if (funcion.RestaurarPersonal(parametros) == true)
+            {
+                MostrarPersonal();
+            }
         }
 
         private void EliminarPersonal()
@@ -318,5 +335,32 @@ namespace ControlPersonal.Vistas
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DiseñarDgvPersonal();
+            timer1.Enabled = false;
+        }
+
+        private void btnGuardarCambiosPersonal_Click(object sender, EventArgs e)
+        {
+            EditarPersonal();
+        }
+
+        private void EditarPersonal()
+        {
+            PersonalServices parametros = new PersonalServices();
+            PersonalData funcion = new PersonalData();
+            parametros.Id_personal = Idpersonal;
+            parametros.Nombres = txtNombres.Text;
+            parametros.Identificacion = txtIdentificacion.Text;
+            parametros.Pais = cbxPais.Text;
+            parametros.Id_cargo = Idcargo;
+            parametros.SueldoPorHora = Convert.ToDouble(txtSueldoHora.Text);
+            if (funcion.EditarPersonal(parametros) == true)
+            {
+                MostrarPersonal();
+                PanelRegistros.Visible = false;
+            }
+        }
     }
 }
