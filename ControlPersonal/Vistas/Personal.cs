@@ -232,6 +232,7 @@ namespace ControlPersonal.Vistas
         private void btnVolverPersonal_Click(object sender, EventArgs e)
         {
             PanelRegistros.Visible=false;
+            PanelPaginado.Visible=true;
         }
 
         private void btnGuardarCambiosC_Click(object sender, EventArgs e)
@@ -472,6 +473,25 @@ namespace ControlPersonal.Vistas
         {
             ReiniciarPaginado();
             MostrarPersonal();
+        }
+
+        private void textBuscador_TextChanged(object sender, EventArgs e)
+        {
+            BuscarPersonal();
+        }
+
+        private void BuscarPersonal()
+        {
+            DataTable dt = new DataTable();
+            PersonalData funcion = new PersonalData();
+            funcion.BuscarPersonal(ref dt, desde, hasta,textBuscador.Text);
+            dataListadoPersonal.DataSource = dt;
+            DiseñarDgvPersonal();
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
