@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using ControlPersonal.Negocios;
 using System.Windows.Forms;
+using ControlPersonal.Vistas;
 
 namespace ControlPersonal.Datos
 {
@@ -139,6 +140,26 @@ namespace ControlPersonal.Datos
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Desde", desde);
                 da.SelectCommand.Parameters.AddWithValue("@Hasta", hasta);
+                da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public void BuscarPersonalIdentidad(ref DataTable dt, string buscador)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlDataAdapter da = new SqlDataAdapter("BuscarPersonalIdentidad", CONEXIONMAESTRA.conectar);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
                 da.Fill(dt);
             }
