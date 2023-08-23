@@ -19,7 +19,27 @@ namespace ControlPersonal.Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            Limpiar();
+            habilitarPaneles();
         }
+
+        private void Limpiar()
+        {
+            txtNombre.Clear();
+            txtUsuario.Clear();
+            txtContraseña.Clear();
+        }
+
+        private void habilitarPaneles()
+        {
+            panelRegistro.Visible = true;
+            lblAnuncioIcono.Visible = true;
+            panelIcono.Visible = false;
+            panelRegistro.Dock = DockStyle.Fill;
+            panelRegistro.BringToFront();
+            btnGuardar.Visible = true;
+            btnActualizar.Visible = false;
+        }
+
     }
 }
