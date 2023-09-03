@@ -49,11 +49,17 @@
     <Compile Include="Datos\AsistenciasData.cs" />
     <Compile Include="Datos\CargosData.cs" />
     <Compile Include="Datos\CONEXIONMAESTRA.cs" />
+    <Compile Include="Datos\ModulosData.cs" />
+    <Compile Include="Datos\PermisosData.cs" />
     <Compile Include="Datos\PersonalData.cs" />
+    <Compile Include="Datos\UsuariosData.cs" />
     <Compile Include="Negocios\AsistenciasServices.cs" />
     <Compile Include="Negocios\Bases.cs" />
     <Compile Include="Negocios\CargosServices.cs" />
+    <Compile Include="Negocios\ModulosServices.cs" />
+    <Compile Include="Negocios\PermisosServices.cs" />
     <Compile Include="Negocios\PersonalServices.cs" />
+    <Compile Include="Negocios\UsuariosServices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\ControlUsuarios.cs">
