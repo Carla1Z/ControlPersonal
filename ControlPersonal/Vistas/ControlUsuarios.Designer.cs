@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlUsuarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,7 +41,7 @@
             this.panelRegistro = new System.Windows.Forms.Panel();
             this.panelIcono = new System.Windows.Forms.Panel();
             this.btnGuardarPersonal = new System.Windows.Forms.Button();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.AgregarIconoPc = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -60,8 +59,6 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataListadoModulos = new System.Windows.Forms.DataGridView();
-            this.Marcar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,12 +68,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.dataListadoModulos = new System.Windows.Forms.DataGridView();
+            this.Marcar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataListadoUsuarios)).BeginInit();
             this.panelRegistro.SuspendLayout();
             this.panelIcono.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgregarIconoPc)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -164,14 +164,14 @@
             this.dataListadoUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Eliminar,
             this.Editar});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataListadoUsuarios.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataListadoUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataListadoUsuarios.Location = new System.Drawing.Point(0, 82);
             this.dataListadoUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -236,12 +236,12 @@
             // 
             this.panelIcono.BackColor = System.Drawing.Color.LightPink;
             this.panelIcono.Controls.Add(this.btnGuardarPersonal);
-            this.panelIcono.Controls.Add(this.pictureBox11);
+            this.panelIcono.Controls.Add(this.AgregarIconoPc);
             this.panelIcono.Controls.Add(this.flowLayoutPanel3);
             this.panelIcono.Controls.Add(this.flowLayoutPanel2);
-            this.panelIcono.Location = new System.Drawing.Point(941, 27);
+            this.panelIcono.Location = new System.Drawing.Point(973, 27);
             this.panelIcono.Name = "panelIcono";
-            this.panelIcono.Size = new System.Drawing.Size(366, 711);
+            this.panelIcono.Size = new System.Drawing.Size(334, 711);
             this.panelIcono.TabIndex = 13;
             this.panelIcono.Visible = false;
             // 
@@ -258,16 +258,18 @@
             this.btnGuardarPersonal.TabIndex = 3;
             this.btnGuardarPersonal.Text = "Volver";
             this.btnGuardarPersonal.UseVisualStyleBackColor = false;
+            this.btnGuardarPersonal.Click += new System.EventHandler(this.btnGuardarPersonal_Click);
             // 
-            // pictureBox11
+            // AgregarIconoPc
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(32, 562);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(265, 145);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 2;
-            this.pictureBox11.TabStop = false;
+            this.AgregarIconoPc.Image = ((System.Drawing.Image)(resources.GetObject("AgregarIconoPc.Image")));
+            this.AgregarIconoPc.Location = new System.Drawing.Point(32, 562);
+            this.AgregarIconoPc.Name = "AgregarIconoPc";
+            this.AgregarIconoPc.Size = new System.Drawing.Size(265, 145);
+            this.AgregarIconoPc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AgregarIconoPc.TabIndex = 2;
+            this.AgregarIconoPc.TabStop = false;
+            this.AgregarIconoPc.Click += new System.EventHandler(this.AgregarIconoPc_Click);
             // 
             // flowLayoutPanel3
             // 
@@ -289,6 +291,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -299,6 +302,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 1;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // pictureBox9
             // 
@@ -309,6 +313,7 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 2;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // pictureBox10
             // 
@@ -319,6 +324,7 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 3;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -340,6 +346,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
@@ -350,6 +357,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pictureBox5
             // 
@@ -360,6 +368,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 2;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -370,6 +379,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // lblAnuncioIcono
             // 
@@ -383,6 +393,7 @@
             this.lblAnuncioIcono.TabIndex = 12;
             this.lblAnuncioIcono.Text = "Elije un Icono";
             this.lblAnuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblAnuncioIcono.Click += new System.EventHandler(this.lblAnuncioIcono_Click);
             // 
             // Icono
             // 
@@ -392,6 +403,7 @@
             this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 11;
             this.Icono.TabStop = false;
+            this.Icono.Click += new System.EventHandler(this.Icono_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -451,6 +463,7 @@
             this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel4
             // 
@@ -459,49 +472,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(758, 238);
             this.panel4.TabIndex = 9;
-            // 
-            // dataListadoModulos
-            // 
-            this.dataListadoModulos.AllowUserToAddRows = false;
-            this.dataListadoModulos.AllowUserToDeleteRows = false;
-            this.dataListadoModulos.AllowUserToResizeRows = false;
-            this.dataListadoModulos.BackgroundColor = System.Drawing.Color.White;
-            this.dataListadoModulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataListadoModulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataListadoModulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Marcar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Zilla Slab", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataListadoModulos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataListadoModulos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataListadoModulos.Location = new System.Drawing.Point(0, 0);
-            this.dataListadoModulos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataListadoModulos.Name = "dataListadoModulos";
-            this.dataListadoModulos.ReadOnly = true;
-            this.dataListadoModulos.RowHeadersWidth = 62;
-            this.dataListadoModulos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataListadoModulos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Zilla Slab", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataListadoModulos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataListadoModulos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Salmon;
-            this.dataListadoModulos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataListadoModulos.RowTemplate.Height = 40;
-            this.dataListadoModulos.RowTemplate.ReadOnly = true;
-            this.dataListadoModulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataListadoModulos.Size = new System.Drawing.Size(758, 238);
-            this.dataListadoModulos.TabIndex = 6;
-            // 
-            // Marcar
-            // 
-            this.Marcar.HeaderText = "Marcar";
-            this.Marcar.MinimumWidth = 6;
-            this.Marcar.Name = "Marcar";
-            this.Marcar.ReadOnly = true;
-            this.Marcar.Width = 125;
             // 
             // label6
             // 
@@ -538,9 +508,11 @@
             // txtContraseña
             // 
             this.txtContraseña.Location = new System.Drawing.Point(251, 173);
+            this.txtContraseña.MaxLength = 6;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(331, 31);
             this.txtContraseña.TabIndex = 5;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtUsuario
             // 
@@ -586,6 +558,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
+            // dlg
+            // 
+            this.dlg.FileName = "openFileDialog1";
+            // 
+            // dataListadoModulos
+            // 
+            this.dataListadoModulos.AllowUserToAddRows = false;
+            this.dataListadoModulos.AllowUserToDeleteRows = false;
+            this.dataListadoModulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataListadoModulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Marcar});
+            this.dataListadoModulos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataListadoModulos.Location = new System.Drawing.Point(0, 0);
+            this.dataListadoModulos.Name = "dataListadoModulos";
+            this.dataListadoModulos.RowHeadersWidth = 51;
+            this.dataListadoModulos.RowTemplate.Height = 24;
+            this.dataListadoModulos.Size = new System.Drawing.Size(758, 238);
+            this.dataListadoModulos.TabIndex = 7;
+            // 
+            // Marcar
+            // 
+            this.Marcar.HeaderText = "Marcar";
+            this.Marcar.MinimumWidth = 6;
+            this.Marcar.Name = "Marcar";
+            this.Marcar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Marcar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Marcar.Width = 125;
+            // 
             // ControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,6 +596,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "ControlUsuarios";
             this.Size = new System.Drawing.Size(1584, 901);
+            this.Load += new System.EventHandler(this.ControlUsuarios_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -603,7 +604,7 @@
             this.panelRegistro.ResumeLayout(false);
             this.panelRegistro.PerformLayout();
             this.panelIcono.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AgregarIconoPc)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -643,8 +644,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataListadoModulos;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Marcar;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnActualizar;
@@ -652,7 +651,7 @@
         private System.Windows.Forms.Label lblAnuncioIcono;
         private System.Windows.Forms.PictureBox Icono;
         private System.Windows.Forms.Panel panelIcono;
-        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox AgregarIconoPc;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -664,5 +663,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnGuardarPersonal;
+        private System.Windows.Forms.OpenFileDialog dlg;
+        private System.Windows.Forms.DataGridView dataListadoModulos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Marcar;
     }
 }
