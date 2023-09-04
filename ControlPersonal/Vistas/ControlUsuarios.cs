@@ -54,6 +54,7 @@ namespace ControlPersonal.Vistas
             funcion.MostrarModulos(ref dt);
             dataListadoModulos.DataSource = dt;
             dataListadoModulos.Columns[1].Visible = false;
+            Bases.DiseñoDGV(ref dataListadoModulos);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
