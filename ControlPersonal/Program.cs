@@ -16,7 +16,7 @@ namespace ControlPersonal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.MenuPrincipal());
+            Application.Run(new Vistas.Login());
         }
     }
 }

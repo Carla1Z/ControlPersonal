@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelUsuarios = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -51,17 +54,14 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelUsuarios.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +74,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1002, 110);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::ControlPersonal.Properties.Resources.unicornio;
+            this.pictureBox1.Location = new System.Drawing.Point(154, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(130, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -89,7 +100,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panelUsuarios);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Zilla Slab", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,6 +108,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1002, 653);
             this.panel2.TabIndex = 1;
+            // 
+            // panelUsuarios
+            // 
+            this.panelUsuarios.Controls.Add(this.flowLayoutPanel2);
+            this.panelUsuarios.Controls.Add(this.label3);
+            this.panelUsuarios.Location = new System.Drawing.Point(549, 25);
+            this.panelUsuarios.Name = "panelUsuarios";
+            this.panelUsuarios.Size = new System.Drawing.Size(415, 602);
+            this.panelUsuarios.TabIndex = 3;
+            this.panelUsuarios.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Zilla Slab", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Indigo;
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(415, 199);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "¿Quién está iniciando sesión?";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
@@ -224,7 +257,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(101, 3);
+            this.button2.Location = new System.Drawing.Point(102, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 77);
             this.button2.TabIndex = 1;
@@ -239,7 +272,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(199, 3);
+            this.button3.Location = new System.Drawing.Point(201, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(93, 77);
             this.button3.TabIndex = 2;
@@ -254,7 +287,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 85);
+            this.button4.Location = new System.Drawing.Point(3, 86);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(93, 77);
             this.button4.TabIndex = 3;
@@ -269,7 +302,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(101, 85);
+            this.button5.Location = new System.Drawing.Point(102, 86);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(93, 77);
             this.button5.TabIndex = 4;
@@ -284,7 +317,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(199, 85);
+            this.button6.Location = new System.Drawing.Point(201, 86);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(93, 77);
             this.button6.TabIndex = 5;
@@ -299,7 +332,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(3, 168);
+            this.button7.Location = new System.Drawing.Point(3, 169);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(93, 77);
             this.button7.TabIndex = 6;
@@ -314,7 +347,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(101, 168);
+            this.button8.Location = new System.Drawing.Point(102, 169);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(93, 77);
             this.button8.TabIndex = 7;
@@ -329,7 +362,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Yu Gothic UI", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(199, 168);
+            this.button9.Location = new System.Drawing.Point(201, 169);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(93, 77);
             this.button9.TabIndex = 8;
@@ -376,27 +409,6 @@
             this.label2.Text = "Inicio de Sesión";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.flowLayoutPanel2);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(549, 25);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(415, 602);
-            this.panel6.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Zilla Slab", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Indigo;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(415, 199);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "¿Quién está iniciando sesión?";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -404,17 +416,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(415, 403);
             this.flowLayoutPanel2.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::ControlPersonal.Properties.Resources.unicornio;
-            this.pictureBox1.Location = new System.Drawing.Point(154, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -427,14 +428,15 @@
             this.Font = new System.Drawing.Font("Zilla Slab", 7.8F);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panelUsuarios.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,8 +467,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panelUsuarios;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }

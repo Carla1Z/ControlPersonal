@@ -43,7 +43,7 @@ namespace ControlPersonal.Datos
             try
             {
                 CONEXIONMAESTRA.abrir();
-                SqlDataAdapter da = new SqlDataAdapter("Select * from Usuarios", CONEXIONMAESTRA.conectar);
+                SqlDataAdapter da = new SqlDataAdapter("select * from Usuarios", CONEXIONMAESTRA.conectar);
                 da.Fill(dt);
             }
             catch (Exception ex)
@@ -73,6 +73,23 @@ namespace ControlPersonal.Datos
             finally
             {
                 CONEXIONMAESTRA.cerrar();
+            }
+        }
+
+        public void VerificarUsuarios(ref string indicador)
+        {
+            try
+            {
+                int Iduser;
+                CONEXIONMAESTRA.abrir();
+                SqlCommand da = new SqlCommand("Select IdUsuario From Usuarios", CONEXIONMAESTRA.conectar);
+                Iduser = Convert.ToInt32(da.ExecuteScalar());
+                CONEXIONMAESTRA.cerrar();
+                indicador = "Correcto";
+            }
+            catch (Exception)
+            {
+                indicador = "Incorrecto";
             }
         }
 
