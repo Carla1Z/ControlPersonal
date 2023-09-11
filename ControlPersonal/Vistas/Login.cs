@@ -1,4 +1,5 @@
 ﻿using ControlPersonal.Datos;
+using ControlPersonal.Negocios;
 using ControlPersonal.Vistas.AsistenteInstalacion;
 using System;
 using System.Collections.Generic;
@@ -96,13 +97,125 @@ namespace ControlPersonal.Vistas
                     p1.BringToFront();
 
                     flowLayoutPanel2.Controls.Add(p1);
+
+                    b.Click += new EventHandler(miEventoLabel);
+                    I1.Click += miEventoImagen;
                 }
             }
             catch (Exception)
             {
-                flowLayoutPanel2.BackColor = Color.Blue;
+                
             }
         }
 
+        private void miEventoImagen(object sender, EventArgs e)
+        {
+            Usuario = Convert.ToString(((PictureBox)sender).Tag);
+            MostrarPanelPass();
+        }
+
+        private void miEventoLabel(object sender, EventArgs e)
+        {
+            Usuario = ((Label)sender).Text;
+            MostrarPanelPass();
+
+        }
+
+        private void MostrarPanelPass()
+        {
+            panelIngresoPassword.Visible = true;
+            panelIngresoPassword.Location = new Point((Width - panelIngresoPassword.Width)/2,(Height - panelIngresoPassword.Height)/2);
+            panelUsuarios.Visible = false;
+        }
+
+        private void txtIdentificacion_TextChanged(object sender, EventArgs e)
+        {
+            validarUsuarios();
+        }
+
+        private void validarUsuarios()
+        {
+            UsuariosServices parametros = new UsuariosServices();
+            UsuariosData funcion = new UsuariosData();
+            parametros.Password = txtIdentificacion.Text;
+            parametros.Login = Usuario;
+            funcion.ValidarUsuario(parametros, ref Idusuario);
+            if (Idusuario > 0)
+            {
+                Dispose();
+                MenuPrincipal frm = new MenuPrincipal();
+                frm.ShowDialog();
+            }
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contraseña erronea", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "1";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "3";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "4";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "5";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "6";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "7";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "8";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "9";
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Text += "0";
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            txtIdentificacion.Clear();
+        }
+
+        private void btnBorrarDigito_Click(object sender, EventArgs e)
+        {
+            int contador;
+            contador = txtIdentificacion.Text.Count();
+            if (contador > 0)
+            {
+                txtIdentificacion.Text = txtIdentificacion.Text.Substring(0, txtIdentificacion.Text.Count() - 1);
+            }
+        }
     }
 }

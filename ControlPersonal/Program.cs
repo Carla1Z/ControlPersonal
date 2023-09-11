@@ -16,7 +16,16 @@ namespace ControlPersonal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.Login());
+            Vistas.Login frm = new Vistas.Login();
+            frm.FormClosed += Frm_FormClosed;
+            frm.ShowDialog();
+            Application.Run();
+        }
+
+        private static void Frm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+            Application.Exit();
         }
     }
 }

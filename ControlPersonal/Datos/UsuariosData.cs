@@ -93,5 +93,26 @@ namespace ControlPersonal.Datos
             }
         }
 
+        public void ValidarUsuario(UsuariosServices parametros, ref int id)
+        {
+            try
+            {
+                CONEXIONMAESTRA.abrir();
+                SqlCommand cmd = new SqlCommand("validar_usuario", CONEXIONMAESTRA.conectar);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Password", parametros.Password);
+                cmd.Parameters.AddWithValue("@Login", parametros.Login);
+                id = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                id = 0;
+            }
+            finally
+            {
+                CONEXIONMAESTRA.cerrar();
+            }
+        }
+
     }
 }
